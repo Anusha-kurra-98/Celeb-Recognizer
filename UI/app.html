@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebrity Recognizer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Celebrity Recognizer</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+        <div class="col card-wrapper" data-player="chiranjeevi">
+                <!-- <div class="card border-0"> -->
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/chiranjeevi.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <!-- <h4 class="text-uppercase card-title">Anjelina Jolie</h4> -->
+                        <h4>Chiranjeevi</h4>
+                        </p>
+                    </div>
+                <!-- </div> -->
+            </div>            
+            <div class="col card-wrapper" data-player="deepika_padukone">
+                    <!-- <div class="card border-0"> -->
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="./images/deepika.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4>Deepika Padukone</h4>
+                            </p>
+                        </div>
+                    <!-- </div> -->
+            </div>            
+            <div class="col card-wrapper" data-player="nani">
+                    <!-- <div class="card border-0"> -->
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="./images/nani.jpg" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4>Nani</h4>
+                            </p>
+                        </div>
+                    <!-- </div> -->
+            </div>          
+
+            <div class="col card-wrapper" data-player="prabhas">
+                <!-- <div class="card border-0"> -->
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/prabhas.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4>Prabhas</h4>
+                        </p>
+                    </div>
+                <!-- </div> -->
+            </div>      
+
+            <div class="col card-wrapper" data-player="priyanka_chopra">
+                <!-- <div class="card border-0"> -->
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/priyanka.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4>Priyanka Chopra</h4>
+                        </p>
+                    </div>
+                <!-- </div> -->
+            </div>
+            <div class="col card-wrapper" data-player="ram_charan">
+                <!-- <div class="card border-0"> -->
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/ramcharan.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4>Ram Charan</h4>
+                        </p>
+                    </div>
+                <!-- </div> -->
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-7 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/upload.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-8 error" id="error" >
+                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>    
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>Player</th>
+                            <th>Probability Score</th>
+                        </tr>
+                        <tr>
+                            <td>Chiranjeevi</td>
+                            <td id="score_chiranjeevi"></td>
+                        </tr>
+                        <tr>
+                            <td>Deepika Padukone</td>
+                            <td id="score_deepika_padukone"></td>
+                        </tr>
+                        <tr>
+                            <td>Nani</td>
+                            <td id="score_nani"></td>
+                        </tr>
+                        <tr>
+                            <td>Prabhas</td>
+                            <td id="score_prabhas"></td>
+                        </tr>
+                        <tr>
+                            <td>Jennifer Lawrence</td>
+                            <td id="score_priyanka_chopra"></td>
+                        </tr>
+                        <tr>
+                            <td>Ram Charan</td>
+                            <td id="score_ram_charan"></td>
+                        </tr>
+                </table>
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDGUH3mflC6a4W_ZAyua9ok_lLKuD_8MsM",
+      authDomain: "celebrity-face-recognizer.firebaseapp.com",
+      projectId: "celebrity-face-recognizer",
+      storageBucket: "celebrity-face-recognizer.appspot.com",
+      messagingSenderId: "831766878938",
+      appId: "1:831766878938:web:44b450944150b55dd223e3",
+      measurementId: "G-YLZWSDXNH5"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</html>

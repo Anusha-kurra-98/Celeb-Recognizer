@@ -1,0 +1,84 @@
+.card-wrapper {
+    margin: 5% 0;
+  }
+  
+/* You can adjust the image size by increasing/decreasing the width, height */
+.custom-circle-image {
+  width: 10vw; 
+  height: 10vw;
+}
+body {
+  background-image: url('images/4186475.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 100;
+  /* For color */
+  /* background-color: #f4f4f4; */
+}
+
+.navbar {
+  background-color: #cbcbcbe6; /* Change to any color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for a modern look */
+  justify-content: center;
+}
+.navbar-brand{
+  color: black;
+}
+.custom-circle-image img {
+  object-fit: cover;
+  background: none;
+}
+
+.card-title {
+  letter-spacing: 1.1px;
+}
+.card-body h4{
+  color: white;
+}
+.card-text {
+  font-family: MerriweatherRegular;
+  font-size: 22px;
+  line-height: initial;
+}
+
+.dropzone {
+  border-style: dashed;
+  background-color: whitesmoke;
+  padding: 5px 20px;
+}
+.note {
+color: black;
+}
+#submitBtn{
+  background-color: #4c8baf;
+  border: #fff;
+}
+.error {
+  font-family: MerriweatherRegular;
+  font-size: 30px;
+  line-height: initial;
+  color: black;
+  text-align: center;
+}
+
+#classTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+#classTable td, #classTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color: black;
+}
+
+#classTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4c8baf;
+  color: white;
+}
